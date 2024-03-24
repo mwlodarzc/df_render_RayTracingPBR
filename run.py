@@ -11,12 +11,12 @@ def setup_venv():
         pip_executable = "pip.exe"
     else:
         venv_bin_path = os.path.join(venv_dir, 'bin')
-        python_executable = "python"
+        python_executable = "python3"
         pip_executable = "pip"
 
     if not os.path.exists(venv_dir):
         print("Creating virtual environment...")
-        subprocess.check_call(['python3', '-m', 'venv', venv_dir])
+        subprocess.check_call([python_executable, '-m', 'venv', venv_dir])
 
     pip_path = os.path.join(venv_bin_path, pip_executable)
     print("Installing dependencies from requirements.txt...")
